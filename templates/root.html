@@ -18,6 +18,12 @@
         </div>
     </div>
 
+    <h3><h3/>
+        <form method="post" action="/">
+            <input type="submit" value="Previous" name="action1"/>
+            <input type="submit" value="Next" name="action2" />
+        </form>
+
     <hr>
     <div class="container">
         {% for img_file in img_files %}
@@ -25,9 +31,9 @@
             <span>{{ img_file }}</span>
             <div>
                 {% if dynamic %}
-                <img src="/dynamic-img/{{ img_file }}">
+                <img src="/dynamic-img/{{ img_file }}" height="150" width="150">
                 {% else %}
-                <img src="/static-img/{{ img_file }}">
+                <img src="/static-img/{{ img_file }}" height="150" width="150">
                 {% endif %}
             </div>
         </div>
