@@ -61,9 +61,8 @@ def build_flask_app(img_dir):
         # Have to make a "fake file"
         f = BytesIO()
         img.save(fp=f, format='jpeg')
-        resp = make_response(f.getvalue())
-        resp.headers['Content-type'] = 'image/jpeg'
-        return resp
+        f.seek(0)
+        return send_file(f, mimetype='image/jpeg')
 
     return app
 
