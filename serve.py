@@ -75,7 +75,7 @@ def build_flask_app(img_dir):
         # param `foo` with value 1.
         global all_entries_dict
         draw_dynamic = request.args.get('dynamic') is not None
-        all_main = all_entries_dict["main"]
+        all_main = all_entries_dict["main page 1"]
         return render_template(
             'root.html', img_dir=img_dir, num_imgs=f'Showing {min(all_main, IMAGE_CAP)} out of {all_main}',
             img_files=split_img_files_dict['main page 1'], dynamic=draw_dynamic)
