@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="container">
+        <h1>Image Directory Viewer</h1>
+    </div>
+
+    <hr>
+    <div class="container">
+        <div>
+            <span class="key">Directory:</span>
+            <span class="value">{{ img_dir }}</span>
+        </div>
+        <div>
+            <span class="key"># images:</span>
+            <span class="value">{{ num_imgs }}</span>
+        </div>
+    </div>
+
+    <hr>
+    <div class="container">
+        {% for img_file in img_files %}
+        <div class="img-block">
+            <span>{{ img_file }}</span>
+            <div>
+                {% if dynamic %}
+                <img src="/dynamic-img/{{ img_file }}">
+                {% else %}
+                <img src="/static-img/{{ img_file }}">
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+<div class='footer-space'></div>
+{% endblock %}
+
+{% block code %}
+<script>
+// No JS for now
+</script>
+{% endblock %}
